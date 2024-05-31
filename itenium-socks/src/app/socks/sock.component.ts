@@ -3,11 +3,12 @@ import { Observable } from 'rxjs';
 import { Sock } from '@models/sock.model';
 import { SocksService } from '@services/socks.service';
 import { AsyncPipe, TitleCasePipe } from '@angular/common';
+import {SockTileComponent} from "@app/socks/sock-tile/sock-tile.component";
 
 @Component({
   selector: 'app-sock',
   standalone: true,
-  imports: [AsyncPipe, TitleCasePipe],
+  imports: [AsyncPipe, TitleCasePipe, SockTileComponent],
   templateUrl: './sock.component.html'
 })
 export class SockComponent {
