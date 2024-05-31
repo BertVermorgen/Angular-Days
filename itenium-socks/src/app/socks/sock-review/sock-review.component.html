@@ -1,0 +1,17 @@
+<div class="box">
+  <div class="client_info">
+    <div class="client_name">
+      <h5>
+        {{ review.socksId }}
+        @for (_ of [].constructor(review.rating); track _) {
+          <i class="fa fa-star" style="color: gold"></i>
+        }
+      </h5>
+      <h6>On {{ review.added | timeAgo }} by {{ review.email }}</h6>
+    </div>
+    <i class="fa fa-quote-left" aria-hidden="true"></i>
+  </div>
+  <p>
+    {{ review.text }}
+  </p>
+</div>

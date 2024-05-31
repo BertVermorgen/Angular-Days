@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {ChangeDetectorRef, NgZone, Pipe, PipeTransform} from '@angular/core';
 import { formatDistanceToNow } from 'date-fns';
 
 @Pipe({
@@ -10,7 +10,9 @@ export class TimeAgoPipe implements PipeTransform {
   private lastText: string;
   private timer: any;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) {}
+  constructor(private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) {
+    this.lastText = ''
+  }
 
   transform(value: Date | string | number): string {
     if (this.lastValue !== value) {
