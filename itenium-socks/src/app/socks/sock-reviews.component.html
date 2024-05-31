@@ -11,23 +11,7 @@
       <div class="carousel-inner">
         @for (review of reviews$ | async; track review; let i = $index) {
           <div class="carousel-item {{ i == 0 ? 'active' : '' }}">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                    {{ review.socksId }}
-                    @for (_ of [].constructor(review.rating); track _) {
-                      <i class="fa fa-star" style="color: gold"></i>
-                    }
-                  </h5>
-                  <h6>On {{ review.added }} by {{ review.email }}</h6>
-                </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                {{ review.text }}
-              </p>
-            </div>
+            <app-sock-review [review]="review"></app-sock-review>
           </div>
         }
       </div>
