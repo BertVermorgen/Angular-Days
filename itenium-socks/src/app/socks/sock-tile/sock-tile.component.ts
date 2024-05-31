@@ -12,4 +12,8 @@ import {CurrencyPipe} from "@angular/common";
 })
 export class SockTileComponent {
   @Input() sock!: Sock;
+
+  imgError(event: any) {
+    event.target.src = './sock-images/socks-not-found.webp';
+  }
 }
