@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SocksService } from '../socks/socks.service';
+import { SocksService } from '@services/socks.service';
 import { Observable } from 'rxjs';
-import { Sock } from '../socks/sock.model';
+import { Sock } from '@models/sock.model';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
